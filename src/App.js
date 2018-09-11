@@ -73,7 +73,6 @@ class App extends Component {
 
   // This function sets the selected list item to the input value
   listItemClcikHandler(e) {
-    console.log('clicked')
     this.setState({
       input: e.target.innerHTML,
       showList: false
