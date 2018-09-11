@@ -44,6 +44,7 @@
 
 .form-field {
   position: relative;
+  margin-bottom: 30px;
 }
 
 .list-container {
@@ -54,6 +55,8 @@
   text-align: left;
   border: 1px solid #000;
   width: 300px;
+  z-index: 1;
+  background: #FFF;
 }
 
 .list-container li {
