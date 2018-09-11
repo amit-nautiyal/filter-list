@@ -8,18 +8,32 @@ class App extends Component {
     this.state ={
       users: ['Amit', 'Aaron', 'Brain', 'Cills', 'James', 'Kei', 'Toby', 'Tim'],
       input: '',
+      showList: false
     }
     this.onChangeHandler = this.onChangeHandler.bind(this);
+    this.onFocusHandler = this.onFocusHandler.bind(this);
+    this.onClcikHandler = this.onClcikHandler.bind(this);
   }
   onChangeHandler = (e) => {
     this.setState({
       input: e.target.value,
     })
   }
+  onFocusHandler = (e) => {
+    this.setState({
+      showList: true
+    })
+  }
+  onClcikHandler = (e) => {
+    this.setState({
+      input: e.target.innerHTML,
+      showList: false
+    })
+  }
   render() {
     const list = this.state.users
         .filter(d => this.state.input === '' || d.includes(this.state.input))
-        .map((d, index) => <li key={index}>{d}</li>);
+        .map((d, index) => <li key={index} onClick={this.onClcikHandler.bind(this)}>{d}</li>);
     return (
       <div className="App">
         <header className="App-header">
@@ -28,8 +42,8 @@ class App extends Component {
         </header>
         <section className='form-layout'>
           <div className='form-field'>
-            <input value={this.state.input} className='select-list-input' type="text" onChange={this.onChangeHandler.bind(this)}/>
-            <ul className='list-container'>{list}</ul>
+            <input value={this.state.input} className='select-list-input' type="text" onFocus={this.onFocusHandler.bind(this)} onChange={this.onChangeHandler.bind(this)}/>
+            {this.state.showList && <ul className='list-container'>{list}</ul>}
           </div>
         </section>
       </div>
