@@ -18,8 +18,51 @@
   font-size: 1.5em;
 }
 
-.App-intro {
-  font-size: large;
+.form-layout {
+  padding: 40px 50px;
+  margin: 50px auto 0;
+  width: 300px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  height: 200px;
+}
+
+.form-layout input {
+  width: 100%;
+  border-width: 0 0 1px 0;
+  border-color: #666;
+  border-style: solid;
+  outline: none;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.form-layout input:focus {
+  outline: none;
+  border-color: green;
+}
+
+.form-field {
+  position: relative;
+}
+
+.list-container {
+  position: absolute;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  border: 1px solid #000;
+  width: 300px;
+}
+
+.list-container li {
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.list-container li:hover {
+  background-color: #E5E5E5;
 }
 
 @keyframes App-logo-spin {
