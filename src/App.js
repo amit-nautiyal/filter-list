@@ -62,9 +62,6 @@ class App extends Component {
 
   // This function sets the selected list item to the input value
   listItemClcikHandler(e) {
-    let ele = document.querySelectorAll('.filter-input')[0]
-    console.log(ele)
-    ele.focus()
     this.setState({
       input: e.target.innerHTML,
       showList: false
